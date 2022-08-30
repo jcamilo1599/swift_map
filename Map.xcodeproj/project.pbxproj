@@ -8,21 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		9A09524428BC821200CC5B3C /* MapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A09524328BC821200CC5B3C /* MapApp.swift */; };
-		9A09524628BC821200CC5B3C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A09524528BC821200CC5B3C /* ContentView.swift */; };
 		9A09524828BC821300CC5B3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A09524728BC821300CC5B3C /* Assets.xcassets */; };
 		9A09524B28BC821300CC5B3C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A09524A28BC821300CC5B3C /* Preview Assets.xcassets */; };
-		9A09524D28BC821300CC5B3C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A09524C28BC821300CC5B3C /* Persistence.swift */; };
-		9A09525028BC821300CC5B3C /* Map.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A09524E28BC821300CC5B3C /* Map.xcdatamodeld */; };
+		9A8EC66F28BC8437002A8545 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EC66E28BC8437002A8545 /* MapView.swift */; };
+		9A8EC67128BC8B05002A8545 /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8EC67028BC8B05002A8545 /* InitialView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9A09524028BC821200CC5B3C /* Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Map.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A09524328BC821200CC5B3C /* MapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapApp.swift; sourceTree = "<group>"; };
-		9A09524528BC821200CC5B3C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9A09524728BC821300CC5B3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A09524A28BC821300CC5B3C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		9A09524C28BC821300CC5B3C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		9A09524F28BC821300CC5B3C /* Map.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Map.xcdatamodel; sourceTree = "<group>"; };
+		9A8EC66E28BC8437002A8545 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		9A8EC67028BC8B05002A8545 /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +53,9 @@
 		9A09524228BC821200CC5B3C /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				9A8EC66D28BC842A002A8545 /* Views */,
 				9A09524328BC821200CC5B3C /* MapApp.swift */,
-				9A09524528BC821200CC5B3C /* ContentView.swift */,
 				9A09524728BC821300CC5B3C /* Assets.xcassets */,
-				9A09524C28BC821300CC5B3C /* Persistence.swift */,
-				9A09524E28BC821300CC5B3C /* Map.xcdatamodeld */,
 				9A09524928BC821300CC5B3C /* Preview Content */,
 			);
 			path = Map;
@@ -71,6 +67,15 @@
 				9A09524A28BC821300CC5B3C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9A8EC66D28BC842A002A8545 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9A8EC66E28BC8437002A8545 /* MapView.swift */,
+				9A8EC67028BC8B05002A8545 /* InitialView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,10 +148,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A09524D28BC821300CC5B3C /* Persistence.swift in Sources */,
-				9A09524628BC821200CC5B3C /* ContentView.swift in Sources */,
-				9A09525028BC821300CC5B3C /* Map.xcdatamodeld in Sources */,
+				9A8EC67128BC8B05002A8545 /* InitialView.swift in Sources */,
 				9A09524428BC821200CC5B3C /* MapApp.swift in Sources */,
+				9A8EC66F28BC8437002A8545 /* MapView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +285,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -310,6 +315,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -347,19 +353,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		9A09524E28BC821300CC5B3C /* Map.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				9A09524F28BC821300CC5B3C /* Map.xcdatamodel */,
-			);
-			currentVersion = 9A09524F28BC821300CC5B3C /* Map.xcdatamodel */;
-			path = Map.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 9A09523828BC821200CC5B3C /* Project object */;
 }
