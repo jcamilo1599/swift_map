@@ -28,17 +28,13 @@ struct InitialView: View {
                 .cornerRadius(20)
                 .disabled(directions.isEmpty)
                 .keyboardShortcut(.defaultAction)
-                .padding()
             }
         }.sheet(isPresented: $showDirections, content: {
-            VStack(spacing: 0) {
-                Text("Ruta al destino")
-                    .font(.largeTitle)
-                    .padding()
-                
+            NavigationView {
                 List(0..<self.directions.count, id: \.self) { i in
                     Text(self.directions[i]).padding()
                 }
+                .navigationTitle("Ruta Textual")
             }
         })
     }

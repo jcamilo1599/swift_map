@@ -9,10 +9,17 @@ import SwiftUI
 import MapKit
 
 struct MapView: UIViewRepresentable {
-    
-    typealias UIViewType = MKMapView
-    
     @Binding var directions: [String]
+    
+    private let source = CLLocationCoordinate2D(
+        latitude: 43.7181552,
+        longitude: -79.5184814
+    )
+    
+    private let destiny = CLLocationCoordinate2D(
+        latitude: 45.837159,
+        longitude: -78.3833457
+    )
     
     func makeCoordinator() -> MapViewCoordinator {
         return MapViewCoordinator()
@@ -30,29 +37,26 @@ struct MapView: UIViewRepresentable {
             span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
         )
         
+        let sourcePin = MKPointAnnotation()
+        sourcePin.coordinate = source
+        sourcePin.title = "Inicio"
+        
+        let destinyPin = MKPointAnnotation()
+        destinyPin.coordinate = destiny
+        destinyPin.title = "Destino"
+        
         mapView.setRegion(region, animated: true)
-        
-        // Toronto
-        let source = MKPlacemark(coordinate: CLLocationCoordinate2D(
-            latitude: 43.7181552,
-            longitude: -79.5184814
-        ))
-        
-        // Algonquin Provincial Park, Ontario
-        let destiny = MKPlacemark(coordinate: CLLocationCoordinate2D(
-            latitude: 45.837159,
-            longitude: -78.3833457
-        ))
+        mapView.addAnnotations([sourcePin, destinyPin])
         
         let request = MKDirections.Request()
-        request.source = MKMapItem(placemark: source)
-        request.destination = MKMapItem(placemark: destiny)
+        request.source = MKMapItem(placemark: MKPlacemark(coordinate: source))
+        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: destiny))
         request.transportType = .automobile
         
         let directions = MKDirections(request: request)
         directions.calculate { response, error in
             guard let route = response?.routes.first else { return }
-            mapView.addAnnotations([source, destiny])
+            
             mapView.addOverlay(route.polyline)
             mapView.setVisibleMapRect(
                 route.polyline.boundingMapRect,
@@ -71,8 +75,8 @@ struct MapView: UIViewRepresentable {
     class MapViewCoordinator: NSObject, MKMapViewDelegate {
         func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
             let renderer = MKPolylineRenderer(overlay: overlay)
-            renderer.strokeColor = .systemBlue
-            renderer.lineWidth = 5
+            renderer.strokeColor = .orange
+            renderer.lineWidth = 4
             
             return renderer
         }
